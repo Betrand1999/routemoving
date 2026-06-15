@@ -1,0 +1,37 @@
+name: Deploy RouteMoving
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Amazon ECR
+        run: |
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 058264368002.dkr.ecr.us-east-1.amazonaws.com
+
+      - name: Build Docker image
+        run: |
+          docker build --platform linux/amd64 -t routemoving .
+
+      - name: Tag Docker image
+        run: |
+          docker tag routemoving:latest 058264368002.dkr.ecr.us-east-1.amazonaws.com/routemoving:latest
+
+      - name: Push image to ECR
+        run: |
+          docker push 058264368002.dkr.ecr.us-east-1.amazonaws.com/routemoving:latest
+
+      - name: Deploy container
+        run: |
+          docker stop routemoving || true
+          docker rm routemoving || true
+          docker pull 058264368002.dkr.ecr.us-east-1.amazonaws.com/routemoving:latest
+          docker run -d --name routemoving -p 5000:5000 058264368002.dkr.ecr.us-east-1.amazonaws.com/routemoving:latest
