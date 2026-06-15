@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | RouteMoving</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/services.css') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">Route<span>Moving</span></div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact" class="btn-small">Get Quote</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <h1>Our Services</h1>
+      <p>
+        Moving, relocation, and logistics solutions built around your needs.
+      </p>
+    </section>
+
+    <section class="services">
+      <div class="service-grid">
+        <div class="card">
+          <h3>Residential Moving</h3>
+          <p>Apartment, condo, and home moving services handled with care.</p>
+        </div>
+        <div class="card">
+          <h3>Commercial Moving</h3>
+          <p>Office and business relocation support.</p>
+        </div>
+        <div class="card">
+          <h3>Packing Services</h3>
+          <p>Help with packing, wrapping, and protecting your belongings.</p>
+        </div>
+        <div class="card">
+          <h3>Furniture Moving</h3>
+          <p>Careful handling of furniture and heavy items.</p>
+        </div>
+        <div class="card">
+          <h3>Delivery Services</h3>
+          <p>Local pickup and delivery for furniture and equipment.</p>
+        </div>
+        <div class="card">
+          <h3>Relocation Support</h3>
+          <p>Organized support for families, professionals, and businesses.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
+
+    <script src="{{ url_for('static', filename='js/global.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/services.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote Submitted | RouteMoving</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">Route<span>Moving</span></div>
+
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact" class="btn-small">Get Quote</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <h1>Quote Request Submitted</h1>
+      <p>Thank you. Our RouteMoving team will contact you shortly.</p>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-form" style="text-align: center">
+        <h2 style="color: #0b1f3a; margin-bottom: 15px">
+          We Received Your Request
+        </h2>
+        <p style="margin-bottom: 25px">
+          A RouteMoving representative will review your moving details and
+          follow up with you soon.
+        </p>
+
+        <a href="/" class="btn">Return Home</a>
+        <a href="/contact" class="btn" style="margin-left: 10px"
+          >Submit Another Quote</a
+        >
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 RouteMoving. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

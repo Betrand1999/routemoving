@@ -1,0 +1,1 @@
+console.log("RouteMoving global JS loaded.");

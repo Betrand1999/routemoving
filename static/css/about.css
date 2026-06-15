@@ -1,0 +1,11 @@
+.about-preview {
+  padding: 70px 8%;
+  background: #f1f5f9;
+  text-align: center;
+}
+
+.about-preview p {
+  max-width: 850px;
+  margin: auto;
+  font-size: 18px;
+}

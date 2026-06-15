@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | RouteMoving</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/contact.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">Route<span>Moving</span></div>
+
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+
+          <li>
+            <a href="/contact" class="btn-small"> Get Quote </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <h1>Get a Free Quote</h1>
+
+      <p>Tell us about your move and we’ll help you plan the next step.</p>
+    </section>
+
+    <!-- Direct Contact Section -->
+    <section class="contact-info">
+      <div class="info-card">
+        <h2>Contact RouteMoving</h2>
+
+        <p>Need immediate assistance? Contact our team directly.</p>
+
+        <div class="contact-details">
+          <p>
+            <strong>Phone:</strong>
+
+            <a href="tel:+12402981823"> +1 (240) 298-1823 </a>
+          </p>
+
+          <p>
+            <strong>Email:</strong>
+
+            <a href="mailto:info@routemoving.com"> info@routemoving.com </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+      <form class="contact-form" action="/submit-quote" method="POST">
+        <label>Full Name</label>
+
+        <input
+          type="text"
+          name="full_name"
+          placeholder="Enter your full name"
+          required
+        />
+
+        <label>Email Address</label>
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label>Phone Number</label>
+
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Enter your phone number"
+          required
+        />
+
+        <label>Move Date</label>
+
+        <input type="date" name="move_date" required />
+
+        <label>Pickup Location</label>
+
+        <input
+          type="text"
+          name="pickup_location"
+          placeholder="City or address"
+          required
+        />
+
+        <label>Destination</label>
+
+        <input
+          type="text"
+          name="destination"
+          placeholder="City or address"
+          required
+        />
+
+        <label>Service Needed</label>
+
+        <select name="service_needed" required>
+          <option value="">Select a service</option>
+
+          <option>Residential Moving</option>
+
+          <option>Commercial Moving</option>
+
+          <option>Packing Services</option>
+
+          <option>Furniture Moving</option>
+
+          <option>Delivery Services</option>
+        </select>
+
+        <label>Message</label>
+
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Tell us more about your move"
+        ></textarea>
+
+        <button type="submit" class="btn form-btn">Submit Quote Request</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 RouteMoving. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/global.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sticky footer layout */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+/* Main page content grows to push footer down */
+main {
+  flex: 1;
+}
+
+.top-bar {
+  background: #071426;
+  color: white;
+  padding: 10px 8%;
+  font-size: 14px;
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-content a {
+  color: #f97316;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.header {
+  background: #0b1f3a;
+  padding: 18px 8%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #f97316;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-small,
+.btn {
+  background: #f97316;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn-small {
+  padding: 10px 16px;
+}
+
+.btn {
+  padding: 14px 24px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+
+.page-hero {
+  padding: 80px 8%;
+  background: #0b1f3a;
+  color: white;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 44px;
+  margin-bottom: 15px;
+}
+
+.services {
+  padding: 70px 8%;
+  text-align: center;
+}
+
+.services h2,
+.about-preview h2,
+.cta h2 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  color: #0b1f3a;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: #f8fafc;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.card h3 {
+  color: #0b1f3a;
+  margin-bottom: 12px;
+}
+
+.cta {
+  padding: 70px 8%;
+  text-align: center;
+  background: #0b1f3a;
+  color: white;
+}
+
+.cta h2 {
+  color: white;
+}
+
+.cta p {
+  margin-bottom: 25px;
+}
+
+footer {
+  margin-top: auto;
+  background: #071426;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 900px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .top-bar-content,
+  .navbar,
+  .nav-links {
+    flex-direction: column;
+  }
+
+  .top-bar-content {
+    gap: 8px;
+    text-align: center;
+  }
+
+  .navbar {
+    gap: 18px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
