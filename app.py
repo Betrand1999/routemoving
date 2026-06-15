@@ -7,19 +7,27 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Load environment variables
+# Load environment variables for local development
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+
+# Environment variables
+AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
+MONGO_URI = os.getenv("MONGO_URI")
+MONGO_DB = os.getenv("MONGO_DB")
+MONGO_COLLECTION = os.getenv("MONGO_COLLECTION")
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+RECEIVER_EMAIL = os.getenv("RECEIVER_EMAIL")
 
 # Amazon SES Client
 ses_client = boto3.client(
     "ses",
-    region_name=os.getenv("AWS_REGION")
+    region_name=AWS_REGION
 )
 
 # MongoDB Client
-mongo_client = MongoClient(os.getenv("MONGO_URI"))
-db = mongo_client[os.getenv("MONGO_DB")]
-quotes_collection = db[os.getenv("MONGO_COLLECTION")]
+mongo_client = MongoClient(MONGO_URI)
+db = mongo_client[MONGO_DB]
+quotes_collection = db[MONGO_COLLECTION]
 
 
 @app.route("/")
@@ -66,7 +74,6 @@ def submit_quote():
     }
 
     try:
-        # Save quote request to MongoDB
         quotes_collection.insert_one(quote_data)
 
         email_body = f"""
@@ -90,12 +97,11 @@ Additional Message
 {message}
 """
 
-        # Send email notification
         ses_client.send_email(
-            Source=os.getenv("SENDER_EMAIL"),
+            Source=SENDER_EMAIL,
             Destination={
                 "ToAddresses": [
-                    os.getenv("RECEIVER_EMAIL")
+                    RECEIVER_EMAIL
                 ]
             },
             Message={
