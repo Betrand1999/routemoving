@@ -1,4 +1,4 @@
-name: Deploy RouteMoving
+name: Deploy RouteMoving to Cloud Run
 
 on:
   push:
@@ -7,59 +7,52 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     env:
-      AWS_REGION: us-east-1
-      ECR_REGISTRY: 058264368002.dkr.ecr.us-east-1.amazonaws.com
-      ECR_REPOSITORY: routemoving
+      GCP_PROJECT_ID: main-nucleus-418523
+      GCP_REGION: us-central1
+      SERVICE_NAME: routemoving
+      REPOSITORY: routemoving
+      IMAGE_NAME: routemoving
       IMAGE_TAG: latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Login to Amazon ECR
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker for Artifact Registry
         run: |
-          aws ecr get-login-password --region $AWS_REGION \
-          | docker login --username AWS --password-stdin $ECR_REGISTRY
+          gcloud auth configure-docker $GCP_REGION-docker.pkg.dev
 
       - name: Build Docker image
         run: |
           docker build --platform linux/amd64 \
-          -t $ECR_REPOSITORY:$IMAGE_TAG .
+            -t $GCP_REGION-docker.pkg.dev/$GCP_PROJECT_ID/$REPOSITORY/$IMAGE_NAME:$IMAGE_TAG .
 
-      - name: Tag Docker image
+      - name: Push image to Artifact Registry
         run: |
-          docker tag $ECR_REPOSITORY:$IMAGE_TAG \
-          $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $GCP_REGION-docker.pkg.dev/$GCP_PROJECT_ID/$REPOSITORY/$IMAGE_NAME:$IMAGE_TAG
 
-      - name: Push image to ECR
+      - name: Deploy to Cloud Run
         run: |
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-
-      - name: Deploy container
-        run: |
-          docker stop routemoving || true
-          docker rm routemoving || true
-
-          docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-
-          docker run -d \
-            --name routemoving \
-            --restart unless-stopped \
-            -p 5000:5000 \
-            -e AWS_REGION="${{ secrets.AWS_REGION }}" \
-            -e AWS_DEFAULT_REGION="${{ secrets.AWS_REGION }}" \
-            -e SENDER_EMAIL="${{ secrets.SENDER_EMAIL }}" \
-            -e RECEIVER_EMAIL="${{ secrets.RECEIVER_EMAIL }}" \
-            -e MONGO_URI="${{ secrets.MONGO_URI }}" \
-            -e MONGO_DB="${{ secrets.MONGO_DB }}" \
-            -e MONGO_COLLECTION="${{ secrets.MONGO_COLLECTION }}" \
-            $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-
-      - name: Verify deployment
-        run: |
-          sleep 10
-          docker ps
-          docker logs routemoving --tail 50
+          gcloud run deploy $SERVICE_NAME \
+            --image $GCP_REGION-docker.pkg.dev/$GCP_PROJECT_ID/$REPOSITORY/$IMAGE_NAME:$IMAGE_TAG \
+            --region $GCP_REGION \
+            --platform managed \
+            --allow-unauthenticated \
+            --set-env-vars AWS_REGION="${{ secrets.AWS_REGION }}" \
+            --set-env-vars AWS_DEFAULT_REGION="${{ secrets.AWS_REGION }}" \
+            --set-env-vars SENDER_EMAIL="${{ secrets.SENDER_EMAIL }}" \
+            --set-env-vars RECEIVER_EMAIL="${{ secrets.RECEIVER_EMAIL }}" \
+            --set-env-vars MONGO_URI="${{ secrets.MONGO_URI }}" \
+            --set-env-vars MONGO_DB="${{ secrets.MONGO_DB }}" \
+            --set-env-vars MONGO_COLLECTION="${{ secrets.MONGO_COLLECTION }}"
