@@ -1,152 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>RouteMoving | Your Route to Stress-Free Moving</title>
+  <title>RouteMoving | Your Route to Stress-Free Moving</title>
 
-    <meta
-      name="description"
-      content="RouteMoving provides professional residential and commercial moving services with reliable, stress-free relocation and logistics solutions."
-    />
+  <!-- SEO -->
+  <meta
+    name="description"
+    content="RouteMoving provides professional residential and commercial moving services with reliable, stress-free relocation and logistics solutions."
+  />
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="{{ url_for('static', filename='images/logo.svg') }}"
-    />
+  <meta
+    name="keywords"
+    content="moving company, residential moving, commercial moving, packing services, relocation, logistics, RouteMoving"
+  />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="{{ url_for('static', filename='images/logo.png') }}"
-    />
+  <meta name="robots" content="index, follow" />
 
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/global.css') }}"
-    />
+  <!-- Open Graph (for Google/Facebook/LinkedIn) -->
+  <meta
+    property="og:title"
+    content="RouteMoving | Your Route to Stress-Free Moving"
+  />
 
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/home.css') }}"
-    />
-  </head>
+  <meta
+    property="og:description"
+    content="Professional moving, relocation, and logistics services built around reliability, care, and speed."
+  />
 
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <nav class="navbar">
-        <div class="logo">Route<span>Moving</span></div>
+  <meta property="og:url" content="https://routemoving.com" />
 
-        <ul class="nav-links">
-          <li><a href="/">Home</a></li>
+  <meta property="og:type" content="website" />
 
-          <li><a href="/services">Services</a></li>
+  <meta
+    property="og:image"
+    content="https://routemoving.com/static/images/logo.png"
+  />
 
-          <li><a href="/about">About</a></li>
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="{{ url_for('static', filename='images/logo.svg') }}"
+  />
 
-          <li>
-            <a href="/contact" class="btn-small">Get Quote</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <link
+    rel="icon"
+    type="image/png"
+    href="{{ url_for('static', filename='images/logo.png') }}"
+  />
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Your Route to Stress-Free Moving</h1>
+  <!-- Styles -->
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/global.css') }}"
+  />
 
-        <p>
-          Professional moving, relocation, and logistics services built around
-          reliability, care, and speed.
-        </p>
-
-        <a href="/contact" class="btn">Get a Free Quote</a>
-
-        <!-- Contact Information -->
-        <div class="hero-contact">
-          <p>
-            Call:
-            <a href="tel:+12402981823">+1 (240) 298-1823</a>
-          </p>
-
-          <p>
-            Email:
-            <a href="mailto:info@routemoving.com"> info@routemoving.com </a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section class="services">
-      <h2>Our Services</h2>
-
-      <div class="service-grid">
-        <div class="card">
-          <h3>Residential Moving</h3>
-
-          <p>
-            Local home and apartment moving handled with care and
-            professionalism.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Commercial Moving</h3>
-
-          <p>
-            Office and business relocation services designed to reduce downtime.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Packing Services</h3>
-
-          <p>Careful packing support to protect your items before the move.</p>
-        </div>
-
-        <div class="card">
-          <h3>Logistics & Delivery</h3>
-
-          <p>
-            Reliable transportation solutions for furniture, equipment, and
-            goods.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Preview -->
-    <section class="about-preview">
-      <h2>Why Choose RouteMoving?</h2>
-
-      <p>
-        RouteMoving is built to make moving simple, organized, and stress-free.
-      </p>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-      <h2>Ready to Move?</h2>
-
-      <p>Request your free moving quote today.</p>
-
-      <a href="/contact" class="btn">Start Your Move</a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2026 RouteMoving. All rights reserved.</p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="{{ url_for('static', filename='js/global.js') }}"></script>
-
-    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
-  </body>
-</html>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/home.css') }}"
+  />
+</head>
