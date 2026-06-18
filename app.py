@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 import boto3
 import os
 from dotenv import load_dotenv
@@ -48,6 +48,15 @@ def services():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+@app.route("/sitemap.xml")
+def sitemap():
+    return send_from_directory("static", "sitemap.xml")
+
+
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory("static", "robots.txt")
 
 
 @app.route("/submit-quote", methods=["POST"])
