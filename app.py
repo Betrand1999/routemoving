@@ -44,10 +44,36 @@ def about():
 def services():
     return render_template("services.html")
 
-
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+
+# SEO Pages
+
+@app.route("/moving-company-elyria-oh")
+def moving_company_elyria():
+    return render_template("moving-company-elyria-oh.html")
+
+
+@app.route("/local-movers-elyria")
+def local_movers_elyria():
+    return render_template("local-movers-elyria.html")
+
+
+@app.route("/residential-moving")
+def residential_moving():
+    return render_template("residential-moving.html")
+
+
+@app.route("/commercial-moving")
+def commercial_moving():
+    return render_template("commercial-moving.html")
+
+
+@app.route("/packing-services")
+def packing_services():
+    return render_template("packing-services.html")
 
 @app.route("/sitemap.xml")
 def sitemap():
@@ -133,7 +159,6 @@ Additional Message
         <p>Error: {str(e)}</p>
         <a href='/contact'>Go Back</a>
         """
-
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
