@@ -1,48 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Commercial Moving Services | RouteMoving</title>
-  <meta name="description" content="RouteMoving provides commercial moving and office relocation services." />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}" />
-</head>
-<body>
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">Route<span>Moving</span></div>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact" class="btn-small">Get Quote</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commercial Moving Services | RouteMoving</title>
+    <meta
+      name="description"
+      content="RouteMoving provides commercial moving and office relocation services."
+    />
 
-  <section class="page-hero">
-    <h1>Commercial Moving Services</h1>
-    <p>Office and business relocation services designed to minimize downtime and ensure a smooth transition for your company.</p>
-  </section>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/services.css') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">Route<span>Moving</span></div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact" class="btn-small">Get Quote</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="services">
-    <div class="service-grid">
-      <div class="card"><h3>Office Moving</h3><p>Move desks, chairs, equipment, and office supplies.</p></div>
-      <div class="card"><h3>Business Relocation</h3><p>Organized support for smooth business transitions.</p></div>
-      <div class="card"><h3>Equipment Moving</h3><p>Careful handling for business equipment.</p></div>
-      <div class="card"><h3>Packing Support</h3><p>Pack and protect office items before moving day.</p></div>
-      <div class="card"><h3>Furniture Moving</h3><p>Move office furniture safely and professionally.</p></div>
-      <div class="card"><h3>Delivery Services</h3><p>Local delivery for furniture, equipment, and supplies.</p></div>
-    </div>
-  </section>
+    <section class="page-hero">
+      <h1>Commercial Moving Services</h1>
+      <p>
+        Office and business relocation services designed to minimize downtime
+        and ensure a smooth transition for your company.
+      </p>
+    </section>
 
-  <section class="cta">
-    <h2>Moving Your Business?</h2>
-    <p>Request a free commercial moving quote today.</p>
-    <a href="/contact" class="btn">Get a Free Quote</a>
-  </section>
+    <section class="services">
+      <div class="service-grid">
+        <div class="card">
+          <h3>Office Moving</h3>
+          <p>Move desks, chairs, equipment, and office supplies.</p>
+        </div>
+        <div class="card">
+          <h3>Business Relocation</h3>
+          <p>Organized support for smooth business transitions.</p>
+        </div>
+        <div class="card">
+          <h3>Equipment Moving</h3>
+          <p>Careful handling for business equipment.</p>
+        </div>
+        <div class="card">
+          <h3>Packing Support</h3>
+          <p>Pack and protect office items before moving day.</p>
+        </div>
+        <div class="card">
+          <h3>Furniture Moving</h3>
+          <p>Move office furniture safely and professionally.</p>
+        </div>
+        <div class="card">
+          <h3>Delivery Services</h3>
+          <p>Local delivery for furniture, equipment, and supplies.</p>
+        </div>
+      </div>
+    </section>
 
-  <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
-</body>
+    <section class="cta">
+      <h2>Moving Your Business?</h2>
+      <p>Request a free commercial moving quote today.</p>
+      <a href="/contact" class="btn">Get a Free Quote</a>
+    </section>
+
+    <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
+  </body>
 </html>

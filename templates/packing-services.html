@@ -1,48 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Packing Services | RouteMoving</title>
-  <meta name="description" content="RouteMoving provides professional packing and unpacking services for safe, organized moves." />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}" />
-</head>
-<body>
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">Route<span>Moving</span></div>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact" class="btn-small">Get Quote</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Packing Services | RouteMoving</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
+    />
+    <meta
+      name="description"
+      content="RouteMoving provides professional packing and unpacking services for safe, organized moves."
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/services.css') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">Route<span>Moving</span></div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact" class="btn-small">Get Quote</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="page-hero">
-    <h1>Packing Services</h1>
-    <p>Professional packing and unpacking services to ensure your belongings are protected throughout your move.</p>
-  </section>
+    <section class="page-hero">
+      <h1>Packing Services</h1>
+      <p>
+        Professional packing and unpacking services to ensure your belongings
+        are protected throughout your move.
+      </p>
+    </section>
 
-  <section class="services">
-    <div class="service-grid">
-      <div class="card"><h3>Home Packing</h3><p>Careful packing for household items.</p></div>
-      <div class="card"><h3>Fragile Item Packing</h3><p>Extra care for glass, dishes, electronics, and valuables.</p></div>
-      <div class="card"><h3>Office Packing</h3><p>Organized packing for office and business moves.</p></div>
-      <div class="card"><h3>Furniture Protection</h3><p>Help protecting furniture during your move.</p></div>
-      <div class="card"><h3>Unpacking Help</h3><p>Support getting settled after the move.</p></div>
-      <div class="card"><h3>Move Preparation</h3><p>Prepare your belongings before moving day.</p></div>
-    </div>
-  </section>
+    <section class="services">
+      <div class="service-grid">
+        <div class="card">
+          <h3>Home Packing</h3>
+          <p>Careful packing for household items.</p>
+        </div>
+        <div class="card">
+          <h3>Fragile Item Packing</h3>
+          <p>Extra care for glass, dishes, electronics, and valuables.</p>
+        </div>
+        <div class="card">
+          <h3>Office Packing</h3>
+          <p>Organized packing for office and business moves.</p>
+        </div>
+        <div class="card">
+          <h3>Furniture Protection</h3>
+          <p>Help protecting furniture during your move.</p>
+        </div>
+        <div class="card">
+          <h3>Unpacking Help</h3>
+          <p>Support getting settled after the move.</p>
+        </div>
+        <div class="card">
+          <h3>Move Preparation</h3>
+          <p>Prepare your belongings before moving day.</p>
+        </div>
+      </div>
+    </section>
 
-  <section class="cta">
-    <h2>Need Packing Help?</h2>
-    <p>Request your free packing services quote today.</p>
-    <a href="/contact" class="btn">Get a Free Quote</a>
-  </section>
+    <section class="cta">
+      <h2>Need Packing Help?</h2>
+      <p>Request your free packing services quote today.</p>
+      <a href="/contact" class="btn">Get a Free Quote</a>
+    </section>
 
-  <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
-</body>
+    <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
+  </body>
 </html>

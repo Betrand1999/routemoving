@@ -1,48 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Local Movers Elyria OH | RouteMoving</title>
-  <meta name="description" content="RouteMoving offers reliable local movers in Elyria, Ohio for homes, apartments, and businesses." />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}" />
-</head>
-<body>
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">Route<span>Moving</span></div>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact" class="btn-small">Get Quote</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Movers OH | RouteMoving</title>
 
-  <section class="page-hero">
-    <h1>Local Movers in Elyria, OH</h1>
-    <p>Looking for reliable local movers in Elyria? RouteMoving offers affordable moving services for homes, apartments, and businesses with a focus on care and customer satisfaction.</p>
-  </section>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
+    />
+    <meta
+      name="description"
+      content="RouteMoving offers reliable local movers in Elyria, Ohio for homes, apartments, and businesses."
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/services.css') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">Route<span>Moving</span></div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact" class="btn-small">Get Quote</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="services">
-    <div class="service-grid">
-      <div class="card"><h3>Apartment Moving</h3><p>Local apartment moves handled safely and efficiently.</p></div>
-      <div class="card"><h3>Home Moving</h3><p>Reliable moving help for houses and condos.</p></div>
-      <div class="card"><h3>Local Delivery</h3><p>Pickup and delivery for furniture and household items.</p></div>
-      <div class="card"><h3>Packing Help</h3><p>Careful packing support before your local move.</p></div>
-      <div class="card"><h3>Furniture Moving</h3><p>Safe handling for heavy furniture and fragile items.</p></div>
-      <div class="card"><h3>Moving Support</h3><p>Simple, organized support from start to finish.</p></div>
-    </div>
-  </section>
+    <section class="page-hero">
+      <h1>Local Movers in Elyria, OH</h1>
+      <p>
+        Looking for reliable local movers in Elyria? RouteMoving offers
+        affordable moving services for homes, apartments, and businesses with a
+        focus on care and customer satisfaction.
+      </p>
+    </section>
 
-  <section class="cta">
-    <h2>Need Local Movers?</h2>
-    <p>Contact RouteMoving for a free quote.</p>
-    <a href="/contact" class="btn">Get a Free Quote</a>
-  </section>
+    <section class="services">
+      <div class="service-grid">
+        <div class="card">
+          <h3>Apartment Moving</h3>
+          <p>Local apartment moves handled safely and efficiently.</p>
+        </div>
+        <div class="card">
+          <h3>Home Moving</h3>
+          <p>Reliable moving help for houses and condos.</p>
+        </div>
+        <div class="card">
+          <h3>Local Delivery</h3>
+          <p>Pickup and delivery for furniture and household items.</p>
+        </div>
+        <div class="card">
+          <h3>Packing Help</h3>
+          <p>Careful packing support before your local move.</p>
+        </div>
+        <div class="card">
+          <h3>Furniture Moving</h3>
+          <p>Safe handling for heavy furniture and fragile items.</p>
+        </div>
+        <div class="card">
+          <h3>Moving Support</h3>
+          <p>Simple, organized support from start to finish.</p>
+        </div>
+      </div>
+    </section>
 
-  <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
-</body>
+    <section class="cta">
+      <h2>Need Local Movers?</h2>
+      <p>Contact RouteMoving for a free quote.</p>
+      <a href="/contact" class="btn">Get a Free Quote</a>
+    </section>
+
+    <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
+  </body>
 </html>

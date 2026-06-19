@@ -1,48 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moving Company in Elyria OH | RouteMoving</title>
-  <meta name="description" content="RouteMoving provides professional residential and commercial moving services in Elyria, Ohio and surrounding areas." />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}" />
-</head>
-<body>
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">Route<span>Moving</span></div>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact" class="btn-small">Get Quote</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moving Company in OH | RouteMoving</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
+    />
+    <meta
+      name="description"
+      content="RouteMoving provides professional residential and commercial moving services in Elyria, Ohio and surrounding areas."
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/services.css') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">Route<span>Moving</span></div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact" class="btn-small">Get Quote</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="page-hero">
-    <h1>Moving Company in Elyria, OH</h1>
-    <p>RouteMoving provides professional residential and commercial moving services in Elyria, Ohio and surrounding areas. We make moving simple, reliable, and stress-free.</p>
-  </section>
+    <section class="page-hero">
+      <h1>Moving Company in Elyria, OH</h1>
+      <p>
+        RouteMoving provides professional residential and commercial moving
+        services in Elyria, Ohio and surrounding areas. We make moving simple,
+        reliable, and stress-free.
+      </p>
+    </section>
 
-  <section class="services">
-    <div class="service-grid">
-      <div class="card"><h3>Residential Moving</h3><p>Home, apartment, and condo moving handled with care.</p></div>
-      <div class="card"><h3>Commercial Moving</h3><p>Office and business relocation support.</p></div>
-      <div class="card"><h3>Packing Services</h3><p>Packing support to protect your belongings.</p></div>
-      <div class="card"><h3>Furniture Moving</h3><p>Careful handling of furniture and heavy items.</p></div>
-      <div class="card"><h3>Delivery Services</h3><p>Local pickup and delivery support.</p></div>
-      <div class="card"><h3>Relocation Support</h3><p>Organized moving support for families and businesses.</p></div>
-    </div>
-  </section>
+    <section class="services">
+      <div class="service-grid">
+        <div class="card">
+          <h3>Residential Moving</h3>
+          <p>Home, apartment, and condo moving handled with care.</p>
+        </div>
+        <div class="card">
+          <h3>Commercial Moving</h3>
+          <p>Office and business relocation support.</p>
+        </div>
+        <div class="card">
+          <h3>Packing Services</h3>
+          <p>Packing support to protect your belongings.</p>
+        </div>
+        <div class="card">
+          <h3>Furniture Moving</h3>
+          <p>Careful handling of furniture and heavy items.</p>
+        </div>
+        <div class="card">
+          <h3>Delivery Services</h3>
+          <p>Local pickup and delivery support.</p>
+        </div>
+        <div class="card">
+          <h3>Relocation Support</h3>
+          <p>Organized moving support for families and businesses.</p>
+        </div>
+      </div>
+    </section>
 
-  <section class="cta">
-    <h2>Ready to Move?</h2>
-    <p>Request your free moving quote today.</p>
-    <a href="/contact" class="btn">Get a Free Quote</a>
-  </section>
+    <section class="cta">
+      <h2>Ready to Move?</h2>
+      <p>Request your free moving quote today.</p>
+      <a href="/contact" class="btn">Get a Free Quote</a>
+    </section>
 
-  <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
-</body>
+    <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
+  </body>
 </html>

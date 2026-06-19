@@ -1,48 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Residential Moving Services | RouteMoving</title>
-  <meta name="description" content="RouteMoving provides residential moving services for houses, apartments, and condos." />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}" />
-</head>
-<body>
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">Route<span>Moving</span></div>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact" class="btn-small">Get Quote</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Residential Moving Services | RouteMoving</title>
 
-  <section class="page-hero">
-    <h1>Residential Moving Services</h1>
-    <p>Whether you are moving from a house, apartment, or condo, RouteMoving provides stress-free residential moving services designed to protect your belongings and simplify your move.</p>
-  </section>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
+    />
+    <meta
+      name="description"
+      content="RouteMoving provides residential moving services for houses, apartments, and condos."
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/services.css') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">Route<span>Moving</span></div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact" class="btn-small">Get Quote</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="services">
-    <div class="service-grid">
-      <div class="card"><h3>House Moving</h3><p>Careful support for full home moves.</p></div>
-      <div class="card"><h3>Apartment Moving</h3><p>Efficient moving for apartments and condos.</p></div>
-      <div class="card"><h3>Packing Services</h3><p>Protect your belongings before moving day.</p></div>
-      <div class="card"><h3>Furniture Moving</h3><p>Safe handling for couches, beds, tables, and more.</p></div>
-      <div class="card"><h3>Loading Support</h3><p>Help loading and organizing your items.</p></div>
-      <div class="card"><h3>Move Planning</h3><p>Organized support to make your move easier.</p></div>
-    </div>
-  </section>
+    <section class="page-hero">
+      <h1>Residential Moving Services</h1>
+      <p>
+        Whether you are moving from a house, apartment, or condo, RouteMoving
+        provides stress-free residential moving services designed to protect
+        your belongings and simplify your move.
+      </p>
+    </section>
 
-  <section class="cta">
-    <h2>Planning a Home Move?</h2>
-    <p>Request your free residential moving quote today.</p>
-    <a href="/contact" class="btn">Get a Free Quote</a>
-  </section>
+    <section class="services">
+      <div class="service-grid">
+        <div class="card">
+          <h3>House Moving</h3>
+          <p>Careful support for full home moves.</p>
+        </div>
+        <div class="card">
+          <h3>Apartment Moving</h3>
+          <p>Efficient moving for apartments and condos.</p>
+        </div>
+        <div class="card">
+          <h3>Packing Services</h3>
+          <p>Protect your belongings before moving day.</p>
+        </div>
+        <div class="card">
+          <h3>Furniture Moving</h3>
+          <p>Safe handling for couches, beds, tables, and more.</p>
+        </div>
+        <div class="card">
+          <h3>Loading Support</h3>
+          <p>Help loading and organizing your items.</p>
+        </div>
+        <div class="card">
+          <h3>Move Planning</h3>
+          <p>Organized support to make your move easier.</p>
+        </div>
+      </div>
+    </section>
 
-  <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
-</body>
+    <section class="cta">
+      <h2>Planning a Home Move?</h2>
+      <p>Request your free residential moving quote today.</p>
+      <a href="/contact" class="btn">Get a Free Quote</a>
+    </section>
+
+    <footer><p>&copy; 2026 RouteMoving. All rights reserved.</p></footer>
+  </body>
 </html>
