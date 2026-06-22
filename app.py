@@ -44,13 +44,13 @@ def about():
 def services():
     return render_template("services.html")
 
+
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
 
 
 # SEO Pages
-
 @app.route("/moving-company-elyria-oh")
 def moving_company_elyria():
     return render_template("moving-company-elyria-oh.html")
@@ -75,6 +75,7 @@ def commercial_moving():
 def packing_services():
     return render_template("packing-services.html")
 
+
 @app.route("/sitemap.xml")
 def sitemap():
     return send_from_directory("static", "sitemap.xml")
@@ -87,14 +88,14 @@ def robots():
 
 @app.route("/submit-quote", methods=["POST"])
 def submit_quote():
-    full_name = request.form.get("full_name")
-    email = request.form.get("email")
-    phone = request.form.get("phone")
-    move_date = request.form.get("move_date")
-    pickup_location = request.form.get("pickup_location")
-    destination = request.form.get("destination")
-    service_needed = request.form.get("service_needed")
-    message = request.form.get("message")
+    full_name = request.form.get("full_name", "").strip()
+    email = request.form.get("email", "").strip()
+    phone = request.form.get("phone", "").strip()
+    move_date = request.form.get("move_date", "").strip()
+    pickup_location = request.form.get("pickup_location", "").strip()
+    destination = request.form.get("destination", "").strip()
+    service_needed = request.form.get("service_needed", "").strip()
+    message = request.form.get("message", "").strip()
 
     quote_data = {
         "full_name": full_name,
@@ -134,6 +135,9 @@ Additional Message
 
         ses_client.send_email(
             Source=SENDER_EMAIL,
+            ReplyToAddresses=[
+                email
+            ],
             Destination={
                 "ToAddresses": [
                     RECEIVER_EMAIL
@@ -151,6 +155,8 @@ Additional Message
             }
         )
 
+        print("Email sent successfully")
+
         return render_template("success.html")
 
     except Exception as e:
@@ -159,6 +165,7 @@ Additional Message
         <p>Error: {str(e)}</p>
         <a href='/contact'>Go Back</a>
         """
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
